@@ -44,12 +44,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'tasks.apps.TasksConfig',
-    'accounts.apps.AccountsConfig',
+    'accounts.apps.AccountsConfig', # 追記
 ]
-
-LOGIN_URL = '/accounts/login'
-LOGIN_REDIRECT_URL = '/blog'
-LOGOUT_REDIRECT_URL = '/accounts/login'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -60,7 +56,6 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-
 ROOT_URLCONF = 'loginTask.urls'
 
 TEMPLATES = [
@@ -151,10 +146,7 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-AUTH_USER_MODEL = 'accounts.CustomUser'
 LOGIN_URL = '/accounts/login'
 LOGIN_REDIRECT_URL = '/tasks'
 LOGOUT_REDIRECT_URL = '/accounts/login'
-
-LOGIN_URL = '/accounts/login'
-LOGOUT_REDIRECT_URL = '/accounts/login'
+AUTH_USER_MODEL = 'accounts.CustomUser'

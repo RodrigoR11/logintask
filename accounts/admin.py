@@ -2,6 +2,7 @@ from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from .models import CustomUser
 
+
 class UserAdmin(BaseUserAdmin):
     list_display = (
         "username",
@@ -17,10 +18,9 @@ class UserAdmin(BaseUserAdmin):
                 'email',
                 'password1',
                 'password2',
-            )
-        }),
+            )}
+        ),
     )
-    
     fieldsets = (
         (None, {'fields': (
             'username',
@@ -28,7 +28,7 @@ class UserAdmin(BaseUserAdmin):
             'age',
             'password'
         )}),
-        ('Permisos', {'fields': (
+        ('Permissions', {'fields': (
             'is_active',
             'is_staff',
             'is_superuser',
